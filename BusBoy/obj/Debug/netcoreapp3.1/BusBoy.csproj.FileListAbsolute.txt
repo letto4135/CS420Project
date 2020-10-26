@@ -1,0 +1,9 @@
+C:\Users\alife\Desktop\CS420Project\BusBoy\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\alife\Desktop\CS420Project\BusBoy\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\alife\Desktop\CS420Project\BusBoy\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.csprojAssemblyReference.cache
+C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.AssemblyInfoInputs.cache
+C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.AssemblyInfo.cs
+C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.RazorTargetAssemblyInfo.cache
+C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\staticwebassets\BusBoy.StaticWebAssets.Manifest.cache
+C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\staticwebassets\BusBoy.StaticWebAssets.xml

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Dum39fVBODXO4sz9p4REKRehr7FpdCvUWIbLqWzdLCp1U9wRbw313KY121hUa0m3wKza82b5Hdp5zuAgMV+SUA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alife\\Desktop\\CS420Project\\Kitchen\\Kitchen.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alife\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}

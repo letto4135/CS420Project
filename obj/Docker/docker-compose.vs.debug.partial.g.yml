@@ -9,17 +9,16 @@ services:
       labels:
         com.microsoft.created-by: "visual-studio"
         com.microsoft.visual-studio.project-name: "RabbitConsole"
-    environment:
-      - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages
+    #environment:
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_rabbitconsole$
     volumes:
-      - C:\Users\cxb4tls\source\repos\Week9\RabbitConsole:/app
-      - C:\Users\cxb4tls\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\cxb4tls\.nuget\packages\:/root/.nuget/packages:ro
-      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+      - C:\Users\alife\Desktop\CS420Project\RabbitConsole:/app
+      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_rabbitconsole$
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages --additionalProbingPath /root/.nuget/fallbackpackages  \"/app/bin/Debug/netcoreapp3.1/RabbitConsole.dll\""
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_rabbitconsole$ \"/src/../../../cxb4tls/source/repos/Week9/RabbitConsole/bin/Debug/netcoreapp3.1/RabbitConsole.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
@@ -34,20 +33,19 @@ services:
     environment:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
-      - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_week9$
     volumes:
-      - C:\Users\cxb4tls\source\repos\Week9\Week9:/app
-      - C:\Users\cxb4tls\source\repos\Week9:/src
-      - C:\Users\cxb4tls\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\cxb4tls\.nuget\packages\:/root/.nuget/packages:ro
-      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+      - C:\Users\alife\Desktop\CS420Project\Week9:/app
+      - C:\Users\alife\Desktop\CS420Project:/src
+      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_week9$
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages --additionalProbingPath /root/.nuget/fallbackpackages  \"/app/bin/Debug/netcoreapp3.1/Week9.dll\""
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_week9$ \"/src/../../../cxb4tls/source/repos/Week9/Week9/bin/Debug/netcoreapp3.1/Week9.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true

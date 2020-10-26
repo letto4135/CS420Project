@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6du7+hrch4yeS/NFUm/8D94euF3px0rzvcp8EQT5kwN4YF1HDX17ATW/QRxM2CXomVqP//fBPPv6TO4twW9CJw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alife\\Desktop\\CS420Project\\BusBoy\\BusBoy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alife\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}

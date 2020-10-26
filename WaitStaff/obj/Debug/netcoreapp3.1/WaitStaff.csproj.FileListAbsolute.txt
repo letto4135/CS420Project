@@ -1,0 +1,9 @@
+C:\Users\alife\Desktop\CS420Project\WaitStaff\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\alife\Desktop\CS420Project\WaitStaff\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\alife\Desktop\CS420Project\WaitStaff\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.csprojAssemblyReference.cache
+C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.AssemblyInfoInputs.cache
+C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.AssemblyInfo.cs
+C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.RazorTargetAssemblyInfo.cache
+C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\staticwebassets\WaitStaff.StaticWebAssets.Manifest.cache
+C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\staticwebassets\WaitStaff.StaticWebAssets.xml

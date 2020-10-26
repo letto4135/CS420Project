@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "7vE7ADGw6UfdzpS4MfnJ6zR4aGy1s4ItxiIqUf75Dk6/4/SRReVGSjdBy86KSgldjVRnfknpqWYfGNscV+PImw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alife\\Desktop\\CS420Project\\WaitStaff\\WaitStaff.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alife\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,14 @@
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\Host-ess.deps.json
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\Host-ess.runtimeconfig.json
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\Host-ess.runtimeconfig.dev.json
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\Host-ess.dll
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.csprojAssemblyReference.cache
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.AssemblyInfoInputs.cache
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.AssemblyInfo.cs
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.RazorTargetAssemblyInfo.cache
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\staticwebassets\Host-ess.StaticWebAssets.Manifest.cache
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\staticwebassets\Host-ess.StaticWebAssets.xml
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.genruntimeconfig.cache

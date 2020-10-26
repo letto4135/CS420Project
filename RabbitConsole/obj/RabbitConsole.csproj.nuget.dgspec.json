@@ -1,30 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cxb4tls\\source\\repos\\Week9\\RabbitConsole\\RabbitConsole.csproj": {}
+    "C:\\Users\\alife\\Desktop\\CS420Project\\RabbitConsole\\RabbitConsole.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cxb4tls\\source\\repos\\Week9\\RabbitConsole\\RabbitConsole.csproj": {
+    "C:\\Users\\alife\\Desktop\\CS420Project\\RabbitConsole\\RabbitConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cxb4tls\\source\\repos\\Week9\\RabbitConsole\\RabbitConsole.csproj",
+        "projectUniqueName": "C:\\Users\\alife\\Desktop\\CS420Project\\RabbitConsole\\RabbitConsole.csproj",
         "projectName": "RabbitConsole",
-        "projectPath": "C:\\Users\\cxb4tls\\source\\repos\\Week9\\RabbitConsole\\RabbitConsole.csproj",
-        "packagesPath": "C:\\Users\\cxb4tls\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cxb4tls\\source\\repos\\Week9\\RabbitConsole\\obj\\",
+        "projectPath": "C:\\Users\\alife\\Desktop\\CS420Project\\RabbitConsole\\RabbitConsole.csproj",
+        "packagesPath": "C:\\Users\\alife\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alife\\Desktop\\CS420Project\\RabbitConsole\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\cxb4tls\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alife\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Users\\cxb4tls\\OldNugetCache": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

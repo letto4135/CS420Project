@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8R5jasRT/DLtDhht/CEOOROVyyEPIq9cyqKdH6MSW3Fmx9qrbu7g8su1mzJBySpYtpzd/EHkl5Q10qvUZvUTuw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alife\\Desktop\\CS420Project\\Bartender\\Bartender.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alife\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}
