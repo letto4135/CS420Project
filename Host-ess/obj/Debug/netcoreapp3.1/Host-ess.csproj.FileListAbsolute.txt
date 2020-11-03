@@ -12,3 +12,17 @@ C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.Ra
 C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\staticwebassets\Host-ess.StaticWebAssets.Manifest.cache
 C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\staticwebassets\Host-ess.StaticWebAssets.xml
 C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.genruntimeconfig.cache
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\Host-ess.exe
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.csproj.CopyComplete
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\Host-ess.pdb
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+C:\Users\alife\Desktop\CS420Project\Host-ess\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.csproj.CoreCompileInputs.cache
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.dll
+C:\Users\alife\Desktop\CS420Project\Host-ess\obj\Debug\netcoreapp3.1\Host-ess.pdb

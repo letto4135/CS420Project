@@ -42,9 +42,7 @@ namespace Week9
                     Contact = new Microsoft.OpenApi.Models.OpenApiContact() { Name = "Chris Brown", Email = "me@me.com", Url = new Uri("http://none") }
                 });
             });
-
         }
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

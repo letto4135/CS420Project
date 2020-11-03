@@ -12,7 +12,7 @@ using Week9.Models.Events;
 
 namespace Week9.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class SourceController : ControllerBase
     {

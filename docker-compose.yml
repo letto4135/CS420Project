@@ -8,6 +8,46 @@ services:
       dockerfile: Week9/Dockerfile
     ports:
       - 32775:443
+
+  waitstaff:
+    image: ${DOCKER_REGISTRY-}waitstaff
+    build:
+      context: .
+      dockerfile: WaitStaff/Dockerfile
+    ports:
+      - 32776:443
+
+  kitchen:
+    image: ${DOCKER_REGISTRY-}kitchen
+    build:
+      context: .
+      dockerfile: Kitchen/Dockerfile
+    ports:
+      - 32777:443
+
+  hosts:
+    image: ${DOCKER_REGISTRY-}hosts
+    build:
+      context: .
+      dockerfile: Host-ess/Dockerfile
+    ports:
+      - 32778:443
+
+  busboy:
+    image: ${DOCKER_REGISTRY-}busboy
+    build:
+      context: .
+      dockerfile: BusBoy/Dockerfile
+    ports:
+      - 32779:443
+
+  bartender:
+    image: ${DOCKER_REGISTRY-}bartender
+    build:
+      context: .
+      dockerfile: Bartender/Dockerfile
+    ports:
+      - 32780:443
   
   rabbitconsole:
     image: ${DOCKER_REGISTRY-}rabbitconsole

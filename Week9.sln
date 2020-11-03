@@ -14,15 +14,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host-ess", "Host-ess\Host-ess.csproj", "{940604F7-0FF3-4380-934E-E503229442B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host-ess", "Host-ess\Host-ess.csproj", "{940604F7-0FF3-4380-934E-E503229442B6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6DB71F82-56AB-4107-AF19-5D32E17A2547} = {6DB71F82-56AB-4107-AF19-5D32E17A2547}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaitStaff", "WaitStaff\WaitStaff.csproj", "{A481597C-5D03-447E-8E21-CE3CAEC655CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaitStaff", "WaitStaff\WaitStaff.csproj", "{A481597C-5D03-447E-8E21-CE3CAEC655CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartender", "Bartender\Bartender.csproj", "{AC685576-7E99-4515-8F67-767D234D1A10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender", "Bartender\Bartender.csproj", "{AC685576-7E99-4515-8F67-767D234D1A10}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A481597C-5D03-447E-8E21-CE3CAEC655CA} = {A481597C-5D03-447E-8E21-CE3CAEC655CA}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kitchen", "Kitchen\Kitchen.csproj", "{46E3605F-66CA-487E-B9A9-D38ADA43C94F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kitchen", "Kitchen\Kitchen.csproj", "{46E3605F-66CA-487E-B9A9-D38ADA43C94F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A481597C-5D03-447E-8E21-CE3CAEC655CA} = {A481597C-5D03-447E-8E21-CE3CAEC655CA}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusBoy", "BusBoy\BusBoy.csproj", "{6DB71F82-56AB-4107-AF19-5D32E17A2547}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusBoy", "BusBoy\BusBoy.csproj", "{6DB71F82-56AB-4107-AF19-5D32E17A2547}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A481597C-5D03-447E-8E21-CE3CAEC655CA} = {A481597C-5D03-447E-8E21-CE3CAEC655CA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
