@@ -1,0 +1,16 @@
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\bin\Debug\netcoreapp3.1\WaitStaffConsole.exe
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\obj\Debug\netcoreapp3.1\WaitStaffConsole.csprojAssemblyReference.cache
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\obj\Debug\netcoreapp3.1\WaitStaffConsole.AssemblyInfoInputs.cache
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\obj\Debug\netcoreapp3.1\WaitStaffConsole.AssemblyInfo.cs
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\bin\Debug\netcoreapp3.1\WaitStaffConsole.deps.json
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\bin\Debug\netcoreapp3.1\WaitStaffConsole.runtimeconfig.json
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\bin\Debug\netcoreapp3.1\WaitStaffConsole.runtimeconfig.dev.json
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\bin\Debug\netcoreapp3.1\WaitStaffConsole.dll
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\bin\Debug\netcoreapp3.1\WaitStaffConsole.pdb
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\obj\Debug\netcoreapp3.1\WaitStaffConsole.csproj.CoreCompileInputs.cache
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\obj\Debug\netcoreapp3.1\WaitStaffConsole.csproj.CopyComplete
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\obj\Debug\netcoreapp3.1\WaitStaffConsole.dll
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\obj\Debug\netcoreapp3.1\WaitStaffConsole.pdb
+C:\Users\alife\Desktop\CS420Project\WaitStaffConsole\obj\Debug\netcoreapp3.1\WaitStaffConsole.genruntimeconfig.cache

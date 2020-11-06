@@ -134,6 +134,34 @@ services:
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
 
+  restaurantfrontend:
+    image: restaurantfrontend:dev
+    container_name: RestaurantFrontEnd
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "RestaurantFrontEnd"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd:/app
+      - C:\Users\alife\Desktop\CS420Project:/src
+      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\alife\.nuget\packages\:/root/.nuget/packages:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/netcoreapp3.1/RestaurantFrontEnd.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
   waitstaff:
     image: waitstaff:dev
     container_name: WaitStaff
@@ -158,6 +186,28 @@ services:
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
       com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/netcoreapp3.1/WaitStaff.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  waitstaffconsole:
+    image: waitstaffconsole:dev
+    container_name: WaitStaffConsole
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "WaitStaffConsole"
+    environment:
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - C:\Users\alife\Desktop\CS420Project\WaitStaffConsole:/app
+      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\alife\.nuget\packages\:/root/.nuget/packages:ro
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/netcoreapp3.1/WaitStaffConsole.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true

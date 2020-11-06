@@ -10,6 +10,12 @@ using Host_ess.Interfaces;
 using Host_ess.Models;
 using Host_ess.Models.ConsumedEvents;
 using Host_ess.Models.PublishedEvents;
+using RabbitMQ.Client;
+using System.Text;
+using RabbitMQ.Client.Events;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
 
 namespace Host_ess.Controllers
 {
@@ -28,50 +34,36 @@ namespace Host_ess.Controllers
             eventBus.PortNumber = Convert.ToInt32(_configuration["rabbitmqport"]);
         }
 
-        /*[HttpPost]
-        public ActionResult HaveEmptyGlass([FromBody] EmptyGlass emptyGlass, int tableNumber, int seatNumber)
+        [HttpGet]
+        public ActionResult GetReservation()
         {
+            return new JsonResult(_eventBus.ConsumeEvent("newReservation"));
+        }
 
-            EmptyGlassEvent ege = new EmptyGlassEvent();
-            ege.EmptyGlass = emptyGlass;
-            ege.TableNumber = tableNumber;
-            ege.SeatNumber = seatNumber;
-            ege.TimeStamp = DateTime.Now;
-
-            _eventBus.PublishEvent<EmptyGlassEvent>("emptyglass", ege);
-
-            return new JsonResult(ege);
-        }*/
-
-        [HttpPost]
-        public ActionResult HaveReservation([FromBody] Reservation reservation)
+        [HttpGet]
+        public ActionResult TableReady()
         {
-            ReservationTaken resTaken = new ReservationTaken() 
-            { 
-                GuestCount=reservation.GuestCount,
-                Name = reservation.Name,
-                PhoneNumber = reservation.PhoneNumber,
-                TimeStamp = new DateTime()
-            };
-
-            _eventBus.PublishEvent<ReservationTaken>("newReservation", resTaken);
-
-            return new JsonResult(resTaken);
+            return new JsonResult(_eventBus.ConsumeEvent("tableReady"));
         }
 
         [HttpPost]
-        public ActionResult TableReady([FromBody] TableReady ready)
+        public ActionResult NewReservation([FromBody] ReservationTaken reservation)
         {
-            SeatedTable seated = new SeatedTable()
-            {
-                TableNumber = ready.TableNumber,
-                Guests = ready.SeatCount,
-                TimeStamp = new DateTime()
-            };
+            reservation.TimeStamp = DateTime.Now;
 
-            _eventBus.PublishEvent<SeatedTable>("seatedTable", seated);
+            _eventBus.PublishEvent<ReservationTaken>("newReservation", reservation);
 
-            return new JsonResult(seated);
+            return new JsonResult(reservation);
+        }
+       
+        [HttpPost]
+        public ActionResult TableSeated([FromBody] SeatedTable table)
+        {
+            table.TimeStamp = DateTime.Now;
+
+            _eventBus.PublishEvent<SeatedTable>("seatedTable", table);
+
+            return new JsonResult(table);
         }
     }
 }

@@ -10,5 +10,10 @@ namespace BusBoy.Models.PublishedEvents
         public int TableNumber { get; set; }
         public int SeatCount { get; set; }
         public DateTime TimeStamp { get; set; }
+
+        public override string ToString()
+        {
+            return "TableNumber;SeatCount;TimeStamp";
+        }
     }
 }

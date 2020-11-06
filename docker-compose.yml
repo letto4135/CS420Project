@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Week9/Dockerfile
     ports:
-      - 32775:443
+      - 44400:443
 
   waitstaff:
     image: ${DOCKER_REGISTRY-}waitstaff
@@ -15,7 +15,13 @@ services:
       context: .
       dockerfile: WaitStaff/Dockerfile
     ports:
-      - 32776:443
+      - 44449:443
+
+  waitstaffconsole:
+    image: ${DOCKER_REGISTRY-}waitstaffconsole
+    build:
+      context: .
+      dockerfile: WaitStaffConsole/Dockerfile
 
   kitchen:
     image: ${DOCKER_REGISTRY-}kitchen
@@ -23,7 +29,7 @@ services:
       context: .
       dockerfile: Kitchen/Dockerfile
     ports:
-      - 32777:443
+      - 44448:443
 
   hosts:
     image: ${DOCKER_REGISTRY-}hosts
@@ -31,7 +37,7 @@ services:
       context: .
       dockerfile: Host-ess/Dockerfile
     ports:
-      - 32778:443
+      - 44447:443
 
   busboy:
     image: ${DOCKER_REGISTRY-}busboy
@@ -39,7 +45,7 @@ services:
       context: .
       dockerfile: BusBoy/Dockerfile
     ports:
-      - 32779:443
+      - 44446:443
 
   bartender:
     image: ${DOCKER_REGISTRY-}bartender
@@ -47,7 +53,15 @@ services:
       context: .
       dockerfile: Bartender/Dockerfile
     ports:
-      - 32780:443
+      - 44445:443
+
+  restaurantfrontend:
+    image: ${DOCKER_REGISTRY-}restaurantfrontend
+    build:
+      context: .
+      dockerfile: RestaurantFrontEnd/Dockerfile
+    ports:
+      - 44444:443
   
   rabbitconsole:
     image: ${DOCKER_REGISTRY-}rabbitconsole
@@ -60,9 +74,8 @@ services:
 #    container_name: rabbitmq_class
 #    volumes:
 #      - ./rabbitmq/etc/:/etc/rabbitmq/
-#      - ./rabbitmq/data/:/var/lib/rabbitmq/
+#      - ./rabbitmq-data:/var/lib/rabbitmq
 #      - ./rabbitmq/logs/:/var/log/rabbitmq/
 #    ports:
 #      - 5672:5672
 #      - 15672:15672
-

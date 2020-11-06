@@ -10,5 +10,6 @@ namespace BusBoy.Interfaces
         int PortNumber { get; set; }
         String HostName { get; set; }
         void PublishEvent<T>(String queueName, T e);
+        string ConsumeEvent(String queueName);
     }
 }

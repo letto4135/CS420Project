@@ -49,3 +49,12 @@ C:\Users\alife\Desktop\CS420Project\bin\Debug\BusBoy.pdb
 C:\Users\alife\Desktop\CS420Project\obj\Debug\docker-compose.dcprojAssemblyReference.cache
 C:\Users\alife\Desktop\CS420Project\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\alife\Desktop\CS420Project\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\alife\Desktop\CS420Project\bin\Debug\WaitStaffConsole.exe
+C:\Users\alife\Desktop\CS420Project\bin\Debug\WaitStaffConsole.dll
+C:\Users\alife\Desktop\CS420Project\bin\Debug\WaitStaffConsole.pdb
+C:\Users\alife\Desktop\CS420Project\bin\Debug\RestaurantFrontEnd.Views.dll
+C:\Users\alife\Desktop\CS420Project\bin\Debug\RestaurantFrontEnd.Views.pdb
+C:\Users\alife\Desktop\CS420Project\bin\Debug\RestaurantFrontEnd.exe
+C:\Users\alife\Desktop\CS420Project\bin\Debug\RestaurantFrontEnd.dll
+C:\Users\alife\Desktop\CS420Project\bin\Debug\RestaurantFrontEnd.pdb
+C:\Users\alife\Desktop\CS420Project\bin\Debug\Newtonsoft.Json.dll

@@ -28,20 +28,20 @@ namespace BusBoy.Controllers
             eventBus.PortNumber = Convert.ToInt32(_configuration["rabbitmqport"]);
         }
 
-        /*[HttpPost]
-        public ActionResult HaveEmptyGlass([FromBody] EmptyGlass emptyGlass, int tableNumber, int seatNumber)
+        [HttpGet]
+        public ActionResult GetChekcPaid()
         {
+            return new JsonResult(_eventBus.ConsumeEvent("checkPaid"));
+        }
 
-            EmptyGlassEvent ege = new EmptyGlassEvent();
-            ege.EmptyGlass = emptyGlass;
-            ege.TableNumber = tableNumber;
-            ege.SeatNumber = seatNumber;
-            ege.TimeStamp = DateTime.Now;
+        [HttpPost]
+        public ActionResult DrinkReady([FromBody] TableReady table)
+        {
+            table.TimeStamp = DateTime.Now;
 
-            _eventBus.PublishEvent<EmptyGlassEvent>("emptyglass", ege);
+            _eventBus.PublishEvent<TableReady>("tableReady", table);
 
-            return new JsonResult(ege);
-        }*/
-
+            return new JsonResult(table);
+        }
     }
 }

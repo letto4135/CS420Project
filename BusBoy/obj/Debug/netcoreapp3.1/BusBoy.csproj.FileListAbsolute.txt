@@ -20,9 +20,10 @@ C:\Users\alife\Desktop\CS420Project\BusBoy\bin\Debug\netcoreapp3.1\BusBoy.dll
 C:\Users\alife\Desktop\CS420Project\BusBoy\bin\Debug\netcoreapp3.1\BusBoy.pdb
 C:\Users\alife\Desktop\CS420Project\BusBoy\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
 C:\Users\alife\Desktop\CS420Project\BusBoy\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
-C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.csproj.CoreCompileInputs.cache
-C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.dll
 C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.pdb
 C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.genruntimeconfig.cache
+C:\Users\alife\Desktop\CS420Project\BusBoy\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.csproj.CoreCompileInputs.cache
+C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\alife\Desktop\CS420Project\BusBoy\obj\Debug\netcoreapp3.1\BusBoy.MvcApplicationPartsAssemblyInfo.cache

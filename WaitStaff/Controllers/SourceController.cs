@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using WaitStaff.Interfaces;
 using WaitStaff.Models;
 using WaitStaff.Models.ConsumedEvents;
@@ -28,20 +31,29 @@ namespace WaitStaff.Controllers
             eventBus.PortNumber = Convert.ToInt32(_configuration["rabbitmqport"]);
         }
 
-        /*[HttpPost]
-        public ActionResult HaveEmptyGlass([FromBody] EmptyGlass emptyGlass, int tableNumber, int seatNumber)
+        [HttpGet]
+        public ActionResult TableSeated()
         {
+            return new JsonResult(_eventBus.ConsumeEvent("tableSeated"));
+        }
 
-            EmptyGlassEvent ege = new EmptyGlassEvent();
-            ege.EmptyGlass = emptyGlass;
-            ege.TableNumber = tableNumber;
-            ege.SeatNumber = seatNumber;
-            ege.TimeStamp = DateTime.Now;
+        [HttpGet]
+        public ActionResult ReadyToPay()
+        {
+            return new JsonResult(_eventBus.ConsumeEvent("readyToPay"));
+        }
 
-            _eventBus.PublishEvent<EmptyGlassEvent>("emptyglass", ege);
+        [HttpGet]
+        public ActionResult DrinkReady()
+        {
+            return new JsonResult(_eventBus.ConsumeEvent("drinkReady"));
+        }
 
-            return new JsonResult(ege);
-        }*/
+        [HttpGet]
+        public ActionResult FoodReady()
+        {
+            return new JsonResult(_eventBus.ConsumeEvent("foodReady"));
+        }
 
         [HttpPost]
         public ActionResult HaveFoodOrder([FromBody] FoodOrder foodOrder)
@@ -63,12 +75,14 @@ namespace WaitStaff.Controllers
             return new JsonResult(drinkOrder);
         }
 
-        [HttpGet]
-        public ActionResult TableSeated()
+        [HttpPost]
+        public ActionResult CheckPaid([FromBody] CheckPaid checkPaid)
         {
-            SeatedTable table = new SeatedTable();
+            checkPaid.TimeStamp = new DateTime();
 
-            return new JsonResult(table);
+            _eventBus.PublishEvent<CheckPaid>("checkPaid", checkPaid);
+
+            return new JsonResult(checkPaid);
         }
     }
 }

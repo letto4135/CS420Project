@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using BusBoy.Interfaces;
+using Newtonsoft.Json.Linq;
 
 namespace BusBoy.Implementations
 {
@@ -17,6 +18,34 @@ namespace BusBoy.Implementations
         public string HostName { get => _hostname; set => _hostname = value; }
 
         public int PortNumber { get => _portNumber; set => _portNumber = value; }
+
+        public string ConsumeEvent(string queueName)
+        {
+            var factory = new ConnectionFactory() { HostName = "host.docker.internal" };
+            using (var connection = factory.CreateConnection())
+            using (var channel = connection.CreateModel())
+            {
+                channel.QueueDeclare(queue: queueName,
+                                     durable: true,
+                                     exclusive: false,
+                                     autoDelete: false,
+                                     arguments: null);
+
+                var data = channel.BasicGet(queueName, false);
+
+                if (data == null) return false.ToString();
+
+                var body = data.Body.ToArray();
+
+                var message = Encoding.UTF8.GetString(body);
+
+                var jsonMsg = JObject.Parse(message);
+
+                channel.BasicAck(data.DeliveryTag, false);
+
+                return message;
+            }
+        }
 
         public void PublishEvent<T>(String queueName, T e)
         {

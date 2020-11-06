@@ -1,4 +1,5 @@
 ﻿using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,32 @@ namespace WaitStaff.Implementations
         public string HostName { get => _hostname; set => _hostname = value; }
 
         public int PortNumber { get => _portNumber; set => _portNumber = value; }
+
+        public string ConsumeEvent(string queueName)
+        {
+            var factory = new ConnectionFactory() { HostName = "host.docker.internal" };
+            using (var connection = factory.CreateConnection())
+            using (var channel = connection.CreateModel())
+            {
+                channel.QueueDeclare(queue: queueName,
+                                     durable: true,
+                                     exclusive: false,
+                                     autoDelete: false,
+                                     arguments: null);
+
+                var data = channel.BasicGet(queueName, false);
+
+                if (data == null) return false.ToString();
+
+                var body = data.Body.ToArray();
+
+                var message = Encoding.UTF8.GetString(body);
+
+                channel.BasicAck(data.DeliveryTag, false);
+
+                return message;
+            }
+        }
 
         public void PublishEvent<T>(String queueName, T e)
         {
@@ -41,11 +68,6 @@ namespace WaitStaff.Implementations
                                      basicProperties: null,
                                      body: body);
             }
-        }
-
-        public void ConsumeEvent<T>(String queueName, T e)
-        {
-
         }
     }
 }

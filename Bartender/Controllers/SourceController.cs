@@ -28,20 +28,20 @@ namespace Bartender.Controllers
             eventBus.PortNumber = Convert.ToInt32(_configuration["rabbitmqport"]);
         }
 
-        /*[HttpPost]
-        public ActionResult HaveEmptyGlass([FromBody] EmptyGlass emptyGlass, int tableNumber, int seatNumber)
+        [HttpGet]
+        public ActionResult GetDrinkOrder()
         {
+            return new JsonResult(_eventBus.ConsumeEvent("drinkOrder"));
+        }
 
-            EmptyGlassEvent ege = new EmptyGlassEvent();
-            ege.EmptyGlass = emptyGlass;
-            ege.TableNumber = tableNumber;
-            ege.SeatNumber = seatNumber;
-            ege.TimeStamp = DateTime.Now;
+        [HttpPost]
+        public ActionResult DrinkReady([FromBody] DrinkReady drink)
+        {
+            drink.TimeStamp = DateTime.Now;
 
-            _eventBus.PublishEvent<EmptyGlassEvent>("emptyglass", ege);
+            _eventBus.PublishEvent<DrinkReady>("drinkready", drink);
 
-            return new JsonResult(ege);
-        }*/
-
+            return new JsonResult(drink);
+        }
     }
 }

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Ppl5T44j8zWYlq3z5JDzyjJg+ZYBU68mcHnjk/3ZbY/PBoNe790+rD7ZrWc6yZV2UM799q9uJ4JwQ1BxlQJ6oA==",
+  "dgSpecHash": "4pw2Dtth4OROyI7RKPWC3dWKK/f/XEWGop+tUi4BGXGS1iN7VYSbyH3D/Bn+qXuoxisxoIzG7ri/NO03tJvFPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\alife\\Desktop\\CS420Project\\BusBoy\\BusBoy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alife\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\alife\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\alife\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
+    "C:\\Users\\alife\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\alife\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",
     "C:\\Users\\alife\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\alife\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",

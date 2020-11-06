@@ -9,5 +9,10 @@ namespace BusBoy.Models.ConsumedEvents
     {
         public int TableNumber { get; set; }
         public DateTime TimeStamp { get; set; }
+
+        public override string ToString()
+        {
+            return "TableNumber;TimeStamp";
+        }
     }
 }
