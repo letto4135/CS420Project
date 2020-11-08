@@ -78,9 +78,6 @@
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "https://localhost:44447/api/Source/NewReservation", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
-        console.log(JSON.stringify({ "guestCount": parseInt(guests), "name": lastName, "phoneNumber": phoneNumber, "timeStamp": new Date().toISOString()}));
         xhr.send(JSON.stringify({ "guestCount": parseInt(guests), "name": lastName, "phoneNumber": phoneNumber, "timeStamp": new Date().toISOString()}));
-
-        console.log(lastName + guests + phoneNumber);
     };
 </script>
