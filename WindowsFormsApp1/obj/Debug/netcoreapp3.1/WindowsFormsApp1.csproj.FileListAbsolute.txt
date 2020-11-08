@@ -11,7 +11,6 @@ C:\Users\alife\Desktop\CS420Project\WindowsFormsApp1\bin\Debug\netcoreapp3.1\Win
 C:\Users\alife\Desktop\CS420Project\WindowsFormsApp1\bin\Debug\netcoreapp3.1\WindowsFormsApp1.pdb
 C:\Users\alife\Desktop\CS420Project\WindowsFormsApp1\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
 C:\Users\alife\Desktop\CS420Project\WindowsFormsApp1\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
-C:\Users\alife\Desktop\CS420Project\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\alife\Desktop\CS420Project\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.csproj.CopyComplete
 C:\Users\alife\Desktop\CS420Project\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.dll
 C:\Users\alife\Desktop\CS420Project\WindowsFormsApp1\obj\Debug\netcoreapp3.1\WindowsFormsApp1.pdb

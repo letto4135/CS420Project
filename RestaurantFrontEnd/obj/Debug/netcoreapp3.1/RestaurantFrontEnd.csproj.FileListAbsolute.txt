@@ -28,10 +28,15 @@ C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\bin\Debug\netcoreapp3.1\R
 C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\bin\Debug\netcoreapp3.1\RestaurantFrontEnd.pdb
 C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\bin\Debug\netcoreapp3.1\RestaurantFrontEnd.Views.dll
 C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\bin\Debug\netcoreapp3.1\RestaurantFrontEnd.Views.pdb
-C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\RestaurantFrontEnd.csproj.CoreCompileInputs.cache
-C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\RestaurantFrontEnd.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\RestaurantFrontEnd.Views.pdb
 C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\RestaurantFrontEnd.dll
 C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\RestaurantFrontEnd.pdb
 C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\RestaurantFrontEnd.genruntimeconfig.cache
 C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\RestaurantFrontEnd.csproj.CopyComplete
+C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\Razor\Pages\Bartender\Index.cshtml.g.cs
+C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\Razor\Pages\BusBoy\Index.cshtml.g.cs
+C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\Razor\Pages\Hosts\Index.cshtml.g.cs
+C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\Razor\Pages\Kitchen\Index.cshtml.g.cs
+C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\Razor\Pages\WaitStaff\Index.cshtml.g.cs
+C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\RestaurantFrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd\obj\Debug\netcoreapp3.1\RestaurantFrontEnd.MvcApplicationPartsAssemblyInfo.cache

@@ -16,6 +16,7 @@ using RabbitMQ.Client.Events;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
+using Microsoft.AspNetCore.Cors;
 
 namespace Host_ess.Controllers
 {

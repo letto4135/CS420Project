@@ -288,7 +288,7 @@ services:
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
     ports:
     - target: 80
-    - published: 44450
+    - published: 44400
       target: 443
     - target: 443
     tty: true

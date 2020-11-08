@@ -1,0 +1,86 @@
+﻿@page
+@model RestaurantFrontEnd.Pages.Hosts.IndexModel
+@{
+}
+
+<h1 style="margin-bottom:3rem;">Hosts</h1>
+<div class="row">
+    <div class="col-6">
+        <h3>New Reservation</h3>
+        <form id="form">
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+            </div>
+            <div class="form-group">
+                <label for="guests">Number of Guests</label>
+                <input type="number" class="form-control" id="guests" placeholder="Number of Guests">
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="number" class="form-control" id="phoneNumber">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="col-6">
+        <h3>Reservations</h3>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Guests</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Otto</th>
+                    <td>4</td>
+                    <td>304-863-2432</td>
+                    <td><button type="button" class="btn btn-danger">X</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">Thornton</th>
+                    <td>2</td>
+                    <td>304-221-4823</td>
+                    <td><button type="button" class="btn btn-danger">X</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">Bird</th>
+                    <td>8</td>
+                    <td>814-231-5692</td>
+                    <td><button type="button" class="btn btn-danger">X</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', newReservation);
+
+    function newReservation(event){
+        event.preventDefault();
+
+        // get the form elements
+        let nameBox = document.getElementById("lastName"); let guestBox = document.getElementById("guests"); let phoneBox = document.getElementById("phoneNumber");
+
+        // get the values of the form elements
+        let lastName = nameBox.value; let guests = guestBox.value; let phoneNumber = phoneBox.value;
+
+        // remove values from boxes after getting the values
+        nameBox.value = ""; guestBox.value = ""; phoneBox.value = "";
+
+        // post to host api the reservation
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://localhost:44447/api/Source/NewReservation", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        console.log(JSON.stringify({ "guestCount": parseInt(guests), "name": lastName, "phoneNumber": phoneNumber, "timeStamp": new Date().toISOString()}));
+        xhr.send(JSON.stringify({ "guestCount": parseInt(guests), "name": lastName, "phoneNumber": phoneNumber, "timeStamp": new Date().toISOString()}));
+
+        console.log(lastName + guests + phoneNumber);
+    };
+</script>

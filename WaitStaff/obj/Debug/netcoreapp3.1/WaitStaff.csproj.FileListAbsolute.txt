@@ -20,9 +20,9 @@ C:\Users\alife\Desktop\CS420Project\WaitStaff\bin\Debug\netcoreapp3.1\WaitStaff.
 C:\Users\alife\Desktop\CS420Project\WaitStaff\bin\Debug\netcoreapp3.1\WaitStaff.pdb
 C:\Users\alife\Desktop\CS420Project\WaitStaff\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
 C:\Users\alife\Desktop\CS420Project\WaitStaff\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
-C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.csproj.CoreCompileInputs.cache
-C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.dll
 C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.pdb
 C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.genruntimeconfig.cache
+C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.csproj.CoreCompileInputs.cache
+C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\alife\Desktop\CS420Project\WaitStaff\obj\Debug\netcoreapp3.1\WaitStaff.MvcApplicationPartsAssemblyInfo.cache

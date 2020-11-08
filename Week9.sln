@@ -40,7 +40,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaitStaffConsole", "WaitSta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{CCB33822-92AC-475B-BBD4-BD5742A01B37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantFrontEnd", "RestaurantFrontEnd\RestaurantFrontEnd.csproj", "{1515FD9F-7B8A-478F-BCCE-5EE84A4D8E7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantFrontEnd", "RestaurantFrontEnd\RestaurantFrontEnd.csproj", "{1515FD9F-7B8A-478F-BCCE-5EE84A4D8E7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -20,9 +20,9 @@ C:\Users\alife\Desktop\CS420Project\Bartender\bin\Debug\netcoreapp3.1\Bartender.
 C:\Users\alife\Desktop\CS420Project\Bartender\bin\Debug\netcoreapp3.1\Bartender.pdb
 C:\Users\alife\Desktop\CS420Project\Bartender\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
 C:\Users\alife\Desktop\CS420Project\Bartender\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
-C:\Users\alife\Desktop\CS420Project\Bartender\obj\Debug\netcoreapp3.1\Bartender.csproj.CoreCompileInputs.cache
-C:\Users\alife\Desktop\CS420Project\Bartender\obj\Debug\netcoreapp3.1\Bartender.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\alife\Desktop\CS420Project\Bartender\obj\Debug\netcoreapp3.1\Bartender.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\alife\Desktop\CS420Project\Bartender\obj\Debug\netcoreapp3.1\Bartender.dll
 C:\Users\alife\Desktop\CS420Project\Bartender\obj\Debug\netcoreapp3.1\Bartender.pdb
 C:\Users\alife\Desktop\CS420Project\Bartender\obj\Debug\netcoreapp3.1\Bartender.genruntimeconfig.cache
+C:\Users\alife\Desktop\CS420Project\Bartender\obj\Debug\netcoreapp3.1\Bartender.csproj.CoreCompileInputs.cache
+C:\Users\alife\Desktop\CS420Project\Bartender\obj\Debug\netcoreapp3.1\Bartender.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\alife\Desktop\CS420Project\Bartender\obj\Debug\netcoreapp3.1\Bartender.MvcApplicationPartsAssemblyInfo.cache
