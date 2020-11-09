@@ -34,24 +34,24 @@
                     <th scope="col">Remove</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tableBody">
                 <tr>
                     <th scope="row">Otto</th>
                     <td>4</td>
                     <td>304-863-2432</td>
-                    <td><button type="button" class="btn btn-danger">X</button></td>
+                    <td onclick="deleteRow(this)"><button type="button" class="btn btn-danger">X</button></td>
                 </tr>
                 <tr>
                     <th scope="row">Thornton</th>
                     <td>2</td>
                     <td>304-221-4823</td>
-                    <td><button type="button" class="btn btn-danger">X</button></td>
+                    <td onclick="deleteRow(this)"><button type="button" class="btn btn-danger">X</button></td>
                 </tr>
                 <tr>
                     <th scope="row">Bird</th>
                     <td>8</td>
                     <td>814-231-5692</td>
-                    <td><button type="button" class="btn btn-danger">X</button></td>
+                    <td onclick="deleteRow(this)"><button type="button" class="btn btn-danger">X</button></td>
                 </tr>
             </tbody>
         </table>
@@ -74,10 +74,82 @@
         // remove values from boxes after getting the values
         nameBox.value = ""; guestBox.value = ""; phoneBox.value = "";
 
-        // post to host api the reservation
+        // post the reservation to host api
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "https://localhost:44447/api/Source/NewReservation", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({ "guestCount": parseInt(guests), "name": lastName, "phoneNumber": phoneNumber, "timeStamp": new Date().toISOString()}));
     };
+
+    function tableSeated(guests) {
+        // post the table seated event
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://localhost:44447/api/Source/TableSeated", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({ "guests": guests, "tableNumber": 0, "timeStamp": new Date().toISOString() }));
+    }
+
+    async function getReservations(){
+        let timer = 3;
+        while (true) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://localhost:44447/api/Source/GetReservation", true);
+            var jsonResponse
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        var data = xhr.responseText;
+                        jsonResponse = JSON.parse(data);
+
+                        if (jsonResponse !== "False") {
+                            jsonResponse = JSON.parse(jsonResponse);
+
+                            var name = jsonResponse.Name;
+                            var phone = jsonResponse.PhoneNumber;
+                            var guests = jsonResponse.GuestCount;
+
+                            var newRowText = `
+                                                <th scope="row">${name}</th>
+                                                <td>${guests}</td>
+                                                <td>${phone}</td>
+                                                <td onclick="deleteRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                                             `
+
+                            var list = document.getElementById("tableBody");
+                            var newRow = list.insertRow(list.rows.length);
+                            newRow.innerHTML = newRowText;
+                            if (timer >= .5) {
+                                timer -= .25;
+                            }
+                        } else {
+                            if (timer < 5) {
+                                timer += .25;
+                            }
+                        }
+                    }
+                }
+            };
+
+            xhr.send(null);
+
+            await sleep(timer * 1000);
+        }
+    }
+
+    function deleteRow(x) {
+        var list = document.getElementById("tableBody");
+        var row = x.parentElement;
+        var rowData = row.children;
+        var guests = parseInt(rowData[1].innerText);
+
+        tableSeated(guests);
+
+        list.deleteRow(row.rowIndex - 1);
+    }
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    getReservations()
 </script>
