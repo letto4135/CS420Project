@@ -2,5 +2,180 @@
 @model RestaurantFrontEnd.Pages.WaitStaff.IndexModel
 @{
 }
+<style>
+</style>
+<h1 style="margin-bottom:3rem;">Waitstaff</h1>
+<div class="row">
+    <div class="col-12">
+        <h3>Food Orders</h3>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Order Number</th>
+                    <th scope="col">Table Number</th>
+                    <th scope="col">Food Order</th>
+                    <th scope="col">Remove</th>
+                </tr>
+            </thead>
+            <tbody id="availableFoodOrders">
+                <tr>
+                    <th scope="row">36</th>
+                    <td>23</td>
+                    <td>
+                        <div>
+                            <p>Shrimp Alfredo</p>
+                            <p style="display:none;">18</p>
+                        </div>
+                        <div>
+                            <p>Chicken Alfredo</p>
+                            <p style="display:none;">17</p>
+                        </div>
+                    </td>
+                    <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">28</th>
+                    <td>24</td>
+                    <td>
+                        <div>
+                            <p>Asiago Tortelloni Alfredo with Grilled Chicken</p>
+                            <p style="display:none;">19</p>
+                        </div>
+                        <div>
+                            <p>Eggplant Parmigiana</p>
+                            <p style="display:none;">15</p>
+                        </div>
+                        <div>
+                            <p>Five Cheese Ziti al Forno</p>
+                            <p style="display:none;">14</p>
+                        </div>
+                    </td>
+                    <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">32</th>
+                    <td>26</td>
+                    <td>
+                        <div>
+                            <p>Seafood Alfredo</p>
+                            <p style="display:none;">18</p>
+                        </div>
+                        <div>
+                            <p>Steak Alfredo</p>
+                            <p style="display:none;">17</p>
+                        </div>
+                    </td>
+                    <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-<h1>Waiters</h1>
+<!-- Common scripts -->
+<script>function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }</script>
+
+<!-- Scripts for Food Orders -->
+<script>async function getAvailableFoodOrders() {
+        let timer = 3;
+        while (true) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://localhost:44448/api/Source/GetFoodOrder", true);
+            var jsonResponse
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        var data = xhr.responseText;
+                        jsonResponse = JSON.parse(data);
+
+                        if (jsonResponse !== "False") {
+                            jsonResponse = JSON.parse(jsonResponse);
+
+                            var orderNumber = jsonResponse.OrderNumber
+                            var tableNumber = jsonResponse.TableNumber;
+                            var food = jsonResponse.Food;
+
+                            var newRowText = `
+                                                <th scope="row">${orderNumber}</th>
+                                                <td>${tableNumber}</td>
+                                                <td>
+                                             `
+
+                            for (var i = 0; i < food.length; i++) {
+                                foodName = Object.keys(food[i])[0];
+                                foodPrice = Object.values(food[i])[0];
+                                newRowText +=`
+                                                    <div>
+                                                        <p>${foodName}</p>
+                                                        <p style="display:none">${foodPrice}</p>
+                                                    </div>
+                                             `
+                            }
+
+
+                            newRowText +=    `
+                                                </td>
+                                                <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                                             `;
+
+                            var list = document.getElementById("availableFoodOrders");
+                            var newRow = list.insertRow(list.rows.length);
+                            newRow.innerHTML = newRowText;
+                            if (timer >= .5) {
+                                timer -= .25;
+                            }
+                        } else {
+                            if (timer < 5) {
+                                timer += .25;
+                            }
+                        }
+                    }
+                }
+            };
+
+            xhr.send(null);
+
+            await sleep(timer * 1000);
+        }
+    }
+
+    function foodReady(orderNumber, tableNumber, food) {
+        // post the table seated event
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://localhost:44448/api/Source/FoodReady", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({
+            "orderNumber": orderNumber,
+            "tableNumber": tableNumber,
+            "food": food,
+            "timeStamp": new Date().toISOString()
+        }));
+    }
+
+    function deleteTableRow(x) {
+        var list = document.getElementById("availableFoodOrders");
+        var row = x.parentElement;
+        var rowData = row.children;
+        var foodData = rowData[2].children;
+        var orderNumber = parseInt(rowData[0].innerText);
+        var tableNumber = parseInt(rowData[1].innerText);
+        var food = [];
+
+        for (var i = 0; i < foodData.length; i++) {
+            foodName = foodData[i].children[0].innerText;
+            foodPrice = parseInt(foodData[i].children[1].innerText);
+            food.push(
+                {
+                    foodName: foodPrice
+                }
+            );
+        }
+
+        foodReady(orderNumber, tableNumber, food);
+
+        list.deleteRow(row.rowIndex - 1);
+    }
+
+    getAvailableFoodOrders()</script>

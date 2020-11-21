@@ -1,8 +1,7 @@
 ﻿<Properties StartupConfiguration="{8D49BA74-985E-4F10-B432-93BEE01DE234}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RestaurantFrontEnd/Pages/Kitchen/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RestaurantFrontEnd/Pages/WaitStaff/Index.cshtml">
     <Files>
-      <File FileName="RestaurantFrontEnd/Pages/Kitchen/Index.cshtml" Line="122" Column="54" />
-      <File FileName="RestaurantFrontEnd/Pages/Bartender/Index.cshtml" Line="1" Column="1" />
+      <File FileName="RestaurantFrontEnd/Pages/WaitStaff/Index.cshtml" Line="7" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,10 +31,7 @@
             </Node>
             <Node name="RestaurantFrontEnd" expanded="True">
               <Node name="Pages" expanded="True">
-                <Node name="Bartender" expanded="True" />
-                <Node name="BusBoy" expanded="True" />
-                <Node name="Hosts" expanded="True" />
-                <Node name="Kitchen" expanded="True">
+                <Node name="WaitStaff" expanded="True">
                   <Node name="Index.cshtml" selected="True" />
                 </Node>
               </Node>
