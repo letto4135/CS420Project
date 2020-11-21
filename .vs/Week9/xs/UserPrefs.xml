@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{8D49BA74-985E-4F10-B432-93BEE01DE234}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="RestaurantFrontEnd/Pages/Kitchen/Index.cshtml">
     <Files>
-      <File FileName="RestaurantFrontEnd/Pages/Kitchen/Index.cshtml" Line="60" Column="47" />
+      <File FileName="RestaurantFrontEnd/Pages/Kitchen/Index.cshtml" Line="122" Column="54" />
+      <File FileName="RestaurantFrontEnd/Pages/Bartender/Index.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +20,9 @@
                 <Node name="PublishedEvents" expanded="True" />
               </Node>
             </Node>
-            <Node name="docker-compose" expanded="True" />
+            <Node name="docker-compose" expanded="True">
+              <Node name="docker-compose.yml" expanded="True" />
+            </Node>
             <Node name="Kitchen" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">

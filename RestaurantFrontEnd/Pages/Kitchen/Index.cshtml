@@ -104,17 +104,24 @@
                                                 <th scope="row">${orderNumber}</th>
                                                 <td>${tableNumber}</td>
                                                 <td>
+                                             `
+
+                            for (var i = 0; i < food.length; i++) {
+                                foodName = Object.keys(food[i])[0];
+                                foodPrice = Object.values(food[i])[0];
+                                newRowText +=`
                                                     <div>
-                                                        <p>Seafood Alfredo</p>
-                                                        <p style="display:none;">18</p>
+                                                        <p>${foodName}</p>
+                                                        <p style="display:none">${foodPrice}</p>
                                                     </div>
-                                                    <div>
-                                                        <p>Steak Alfredo</p>
-                                                        <p style="display:none;">17</p>
-                                                    </div>
+                                             `
+                            }
+
+
+                            newRowText +=    `
                                                 </td>
                                                 <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
-                                             `
+                                             `;
 
                             var list = document.getElementById("availableFoodOrders");
                             var newRow = list.insertRow(list.rows.length);

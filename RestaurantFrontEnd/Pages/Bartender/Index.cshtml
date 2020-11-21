@@ -100,21 +100,28 @@
                             var tableNumber = jsonResponse.TableNumber;
                             var drinks = jsonResponse.Drink;
 
-                            var newRowText = `
+                            var newRowText =  `
                                                 <th scope="row">${orderNumber}</th>
                                                 <td>${tableNumber}</td>
                                                 <td>
+                                              `
+
+                            for (var i = 0; i < drinks.length; i++) {
+                                drinkName = Object.keys(drinks[i])[0];
+                                drinkPrice = Object.values(drinks[i])[0];
+                                newRowText += `
                                                     <div>
-                                                        <p>Coke</p>
-                                                        <p style="display:none;">2</p>
+                                                        <p>${drinkName}</p>
+                                                        <p style="display:none">${drinkPrice}</p>
                                                     </div>
-                                                    <div>
-                                                        <p>Diet Coke</p>
-                                                        <p style="display:none;">2</p>
-                                                    </div>
+                                              `
+                            }
+
+
+                            newRowText +=     `
                                                 </td>
                                                 <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
-                                             `
+                                              `;
 
                             var list = document.getElementById("availableDrinkOrders");
                             var newRow = list.insertRow(list.rows.length);
