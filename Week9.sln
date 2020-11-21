@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week9", "Week9\Week9.csproj", "{8EC19E1A-A589-496D-9EF3-A4F253B6DC11}"
-EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8D49BA74-985E-4F10-B432-93BEE01DE234}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitConsole", "RabbitConsole\RabbitConsole.csproj", "{9A775344-B0D4-4225-B5DB-25B66ACB363B}"
@@ -38,8 +36,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusBoy", "BusBoy\BusBoy.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaitStaffConsole", "WaitStaffConsole\WaitStaffConsole.csproj", "{6F4F4EAE-0438-427F-87F3-F8EDA6053C05}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{CCB33822-92AC-475B-BBD4-BD5742A01B37}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantFrontEnd", "RestaurantFrontEnd\RestaurantFrontEnd.csproj", "{1515FD9F-7B8A-478F-BCCE-5EE84A4D8E7C}"
 EndProject
 Global
@@ -48,10 +44,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8EC19E1A-A589-496D-9EF3-A4F253B6DC11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EC19E1A-A589-496D-9EF3-A4F253B6DC11}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EC19E1A-A589-496D-9EF3-A4F253B6DC11}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EC19E1A-A589-496D-9EF3-A4F253B6DC11}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8D49BA74-985E-4F10-B432-93BEE01DE234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8D49BA74-985E-4F10-B432-93BEE01DE234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D49BA74-985E-4F10-B432-93BEE01DE234}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,13 +73,7 @@ Global
 		{6DB71F82-56AB-4107-AF19-5D32E17A2547}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DB71F82-56AB-4107-AF19-5D32E17A2547}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6F4F4EAE-0438-427F-87F3-F8EDA6053C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F4F4EAE-0438-427F-87F3-F8EDA6053C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F4F4EAE-0438-427F-87F3-F8EDA6053C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F4F4EAE-0438-427F-87F3-F8EDA6053C05}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CCB33822-92AC-475B-BBD4-BD5742A01B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CCB33822-92AC-475B-BBD4-BD5742A01B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CCB33822-92AC-475B-BBD4-BD5742A01B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CCB33822-92AC-475B-BBD4-BD5742A01B37}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1515FD9F-7B8A-478F-BCCE-5EE84A4D8E7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1515FD9F-7B8A-478F-BCCE-5EE84A4D8E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1515FD9F-7B8A-478F-BCCE-5EE84A4D8E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -98,5 +84,12 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E39B9ABF-B6C2-4CA9-A9E8-E58031858D4D}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.VersionControlPolicy = $2
+		$0.StandardHeader = $3
 	EndGlobalSection
 EndGlobal

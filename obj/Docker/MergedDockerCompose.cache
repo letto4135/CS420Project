@@ -1,7 +1,7 @@
 services:
   bartender:
     build:
-      context: C:\Users\alife\Desktop\CS420Project
+      context: /Users/alife/Other/CS420Project
       dockerfile: Bartender/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -14,7 +14,7 @@ services:
     - target: 443
   busboy:
     build:
-      context: C:\Users\alife\Desktop\CS420Project
+      context: /Users/alife/Other/CS420Project
       dockerfile: BusBoy/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -27,7 +27,7 @@ services:
     - target: 443
   hosts:
     build:
-      context: C:\Users\alife\Desktop\CS420Project
+      context: /Users/alife/Other/CS420Project
       dockerfile: Host-ess/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -40,7 +40,7 @@ services:
     - target: 443
   kitchen:
     build:
-      context: C:\Users\alife\Desktop\CS420Project
+      context: /Users/alife/Other/CS420Project
       dockerfile: Kitchen/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -53,12 +53,12 @@ services:
     - target: 443
   rabbitconsole:
     build:
-      context: C:\Users\alife\Desktop\CS420Project
+      context: /Users/alife/Other/CS420Project
       dockerfile: RabbitConsole/Dockerfile
     image: rabbitconsole
   restaurantfrontend:
     build:
-      context: C:\Users\alife\Desktop\CS420Project
+      context: /Users/alife/Other/CS420Project
       dockerfile: RestaurantFrontEnd/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -71,7 +71,7 @@ services:
     - target: 443
   waitstaff:
     build:
-      context: C:\Users\alife\Desktop\CS420Project
+      context: /Users/alife/Other/CS420Project
       dockerfile: WaitStaff/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -84,23 +84,7 @@ services:
     - target: 443
   waitstaffconsole:
     build:
-      context: C:\Users\alife\Desktop\CS420Project
+      context: /Users/alife/Other/CS420Project
       dockerfile: WaitStaffConsole/Dockerfile
     image: waitstaffconsole
-  week9:
-    build:
-      context: C:\Users\alife\Desktop\CS420Project
-      dockerfile: Week9/Dockerfile
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_URLS: https://+:443;http://+:80
-    image: week9
-    ports:
-    - target: 80
-    - published: 44400
-      target: 443
-    - target: 443
-    volumes:
-    - C:\Users\alife\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\alife\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
 version: '3.4'

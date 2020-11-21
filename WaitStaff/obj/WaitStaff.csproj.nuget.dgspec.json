@@ -1,31 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alife\\Desktop\\CS420Project\\WaitStaff\\WaitStaff.csproj": {}
+    "/Users/alife/Other/CS420Project/WaitStaff/WaitStaff.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alife\\Desktop\\CS420Project\\WaitStaff\\WaitStaff.csproj": {
+    "/Users/alife/Other/CS420Project/WaitStaff/WaitStaff.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alife\\Desktop\\CS420Project\\WaitStaff\\WaitStaff.csproj",
+        "projectUniqueName": "/Users/alife/Other/CS420Project/WaitStaff/WaitStaff.csproj",
         "projectName": "WaitStaff",
-        "projectPath": "C:\\Users\\alife\\Desktop\\CS420Project\\WaitStaff\\WaitStaff.csproj",
-        "packagesPath": "C:\\Users\\alife\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alife\\Desktop\\CS420Project\\WaitStaff\\obj\\",
+        "projectPath": "/Users/alife/Other/CS420Project/WaitStaff/WaitStaff.csproj",
+        "packagesPath": "/Users/alife/.nuget/packages/",
+        "outputPath": "/Users/alife/Other/CS420Project/WaitStaff/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alife\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/alife/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Cors": {
               "target": "Package",
@@ -65,6 +65,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.8, 3.1.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -73,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

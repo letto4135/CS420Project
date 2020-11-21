@@ -1,44 +1,6 @@
 version: '3.4'
 
 services:
-  week9:
-    image: ${DOCKER_REGISTRY-}week9
-    build:
-      context: .
-      dockerfile: Week9/Dockerfile
-    ports:
-      - 44400:443
-
-  waitstaff:
-    image: ${DOCKER_REGISTRY-}waitstaff
-    build:
-      context: .
-      dockerfile: WaitStaff/Dockerfile
-    ports:
-      - 44449:443
-
-  waitstaffconsole:
-    image: ${DOCKER_REGISTRY-}waitstaffconsole
-    build:
-      context: .
-      dockerfile: WaitStaffConsole/Dockerfile
-
-  kitchen:
-    image: ${DOCKER_REGISTRY-}kitchen
-    build:
-      context: .
-      dockerfile: Kitchen/Dockerfile
-    ports:
-      - 44448:443
-
-  hosts:
-    image: ${DOCKER_REGISTRY-}hosts
-    build:
-      context: .
-      dockerfile: Host-ess/Dockerfile
-    ports:
-      - 44447:443
-
   busboy:
     image: ${DOCKER_REGISTRY-}busboy
     build:
@@ -55,6 +17,37 @@ services:
     ports:
       - 44445:443
 
+  hosts:
+    image: ${DOCKER_REGISTRY-}hostess
+    build:
+      context: .
+      dockerfile: Host-ess/Dockerfile
+    ports:
+      - 44447:443
+
+  kitchen:
+    image: ${DOCKER_REGISTRY-}kitchen
+    build:
+      context: .
+      dockerfile: Kitchen/Dockerfile
+    ports:
+      - 44448:443
+
+  rabbitconsole:
+    image: ${DOCKER_REGISTRY-}rabbitconsole
+    build:
+      context: .
+      dockerfile: RabbitConsole/Dockerfile
+
+
+  waitstaff:
+    image: ${DOCKER_REGISTRY-}waitstaff
+    build:
+      context: .
+      dockerfile: WaitStaff/Dockerfile
+    ports:
+      - 44449:443
+
   restaurantfrontend:
     image: ${DOCKER_REGISTRY-}restaurantfrontend
     build:
@@ -62,20 +55,9 @@ services:
       dockerfile: RestaurantFrontEnd/Dockerfile
     ports:
       - 44444:443
-  
-  rabbitconsole:
-    image: ${DOCKER_REGISTRY-}rabbitconsole
+      
+  waitstaffconsole:
+    image: ${DOCKER_REGISTRY-}waitstaffconsole
     build:
       context: .
-      dockerfile: RabbitConsole/Dockerfile
-
-#  rabbitmq:
-#    image: rabbitmq:3-management
-#    container_name: rabbitmq_class
-#    volumes:
-#      - ./rabbitmq/etc/:/etc/rabbitmq/
-#      - ./rabbitmq-data:/var/lib/rabbitmq
-#      - ./rabbitmq/logs/:/var/log/rabbitmq/
-#    ports:
-#      - 5672:5672
-#      - 15672:15672
+      dockerfile: WaitStaffConsole/Dockerfile

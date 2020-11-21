@@ -35,11 +35,11 @@ namespace Kitchen.Controllers
         }
 
         [HttpPost]
-        public ActionResult DrinkReady([FromBody] FoodReady food)
+        public ActionResult FoodReady([FromBody] FoodReady food)
         {
             food.TimeStamp = DateTime.Now;
 
-            _eventBus.PublishEvent<FoodReady>("drinkready", food);
+            _eventBus.PublishEvent<FoodReady>("foodReady", food);
 
             return new JsonResult(food);
         }

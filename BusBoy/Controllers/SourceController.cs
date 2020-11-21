@@ -29,13 +29,13 @@ namespace BusBoy.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetChekcPaid()
+        public ActionResult GetCheckPaid()
         {
             return new JsonResult(_eventBus.ConsumeEvent("checkPaid"));
         }
 
         [HttpPost]
-        public ActionResult DrinkReady([FromBody] TableReady table)
+        public ActionResult TableReady([FromBody] TableReady table)
         {
             table.TimeStamp = DateTime.Now;
 

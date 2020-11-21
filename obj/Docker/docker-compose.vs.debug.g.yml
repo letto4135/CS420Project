@@ -14,12 +14,10 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\alife\Desktop\CS420Project\Bartender:/app
-      - C:\Users\alife\Desktop\CS420Project:/src
-      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\alife\.nuget\packages\:/root/.nuget/packages:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - /Users/alife/Other/CS420Project/Bartender:/app
+      - /Users/alife/Other/CS420Project:/src
+      - /Users/alife/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/alife/.nuget/packages/:/root/.nuget/packages:ro
 
     entrypoint: tail -f /dev/null
     labels:
@@ -41,12 +39,10 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\alife\Desktop\CS420Project\BusBoy:/app
-      - C:\Users\alife\Desktop\CS420Project:/src
-      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\alife\.nuget\packages\:/root/.nuget/packages:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - /Users/alife/Other/CS420Project/BusBoy:/app
+      - /Users/alife/Other/CS420Project:/src
+      - /Users/alife/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/alife/.nuget/packages/:/root/.nuget/packages:ro
 
     entrypoint: tail -f /dev/null
     labels:
@@ -57,7 +53,7 @@ services:
     tty: true
 
   hosts:
-    image: hosts:dev
+    image: hostess:dev
     container_name: Host-ess
     build:
       target: base
@@ -69,12 +65,10 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\alife\Desktop\CS420Project\Host-ess:/app
-      - C:\Users\alife\Desktop\CS420Project:/src
-      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\alife\.nuget\packages\:/root/.nuget/packages:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - /Users/alife/Other/CS420Project/Host-ess:/app
+      - /Users/alife/Other/CS420Project:/src
+      - /Users/alife/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/alife/.nuget/packages/:/root/.nuget/packages:ro
 
     entrypoint: tail -f /dev/null
     labels:
@@ -97,12 +91,10 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\alife\Desktop\CS420Project\Kitchen:/app
-      - C:\Users\alife\Desktop\CS420Project:/src
-      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\alife\.nuget\packages\:/root/.nuget/packages:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - /Users/alife/Other/CS420Project/Kitchen:/app
+      - /Users/alife/Other/CS420Project:/src
+      - /Users/alife/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/alife/.nuget/packages/:/root/.nuget/packages:ro
 
     entrypoint: tail -f /dev/null
     labels:
@@ -123,9 +115,9 @@ services:
     environment:
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\alife\Desktop\CS420Project\RabbitConsole:/app
-      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\alife\.nuget\packages\:/root/.nuget/packages:ro
+      - /Users/alife/Other/CS420Project/RabbitConsole:/app
+      - /Users/alife/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/alife/.nuget/packages/:/root/.nuget/packages:ro
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
@@ -147,12 +139,10 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\alife\Desktop\CS420Project\RestaurantFrontEnd:/app
-      - C:\Users\alife\Desktop\CS420Project:/src
-      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\alife\.nuget\packages\:/root/.nuget/packages:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - /Users/alife/Other/CS420Project/RestaurantFrontEnd:/app
+      - /Users/alife/Other/CS420Project:/src
+      - /Users/alife/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/alife/.nuget/packages/:/root/.nuget/packages:ro
 
     entrypoint: tail -f /dev/null
     labels:
@@ -175,12 +165,10 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\alife\Desktop\CS420Project\WaitStaff:/app
-      - C:\Users\alife\Desktop\CS420Project:/src
-      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\alife\.nuget\packages\:/root/.nuget/packages:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - /Users/alife/Other/CS420Project/WaitStaff:/app
+      - /Users/alife/Other/CS420Project:/src
+      - /Users/alife/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/alife/.nuget/packages/:/root/.nuget/packages:ro
 
     entrypoint: tail -f /dev/null
     labels:
@@ -201,41 +189,13 @@ services:
     environment:
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\alife\Desktop\CS420Project\WaitStaffConsole:/app
-      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\alife\.nuget\packages\:/root/.nuget/packages:ro
+      - /Users/alife/Other/CS420Project/WaitStaffConsole:/app
+      - /Users/alife/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/alife/.nuget/packages/:/root/.nuget/packages:ro
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
       com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/netcoreapp3.1/WaitStaffConsole.dll\""
-      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
-      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
-    tty: true
-
-  week9:
-    image: week9:dev
-    container_name: Week9
-    build:
-      target: base
-      labels:
-        com.microsoft.created-by: "visual-studio"
-        com.microsoft.visual-studio.project-name: "Week9"
-    environment:
-      - DOTNET_USE_POLLING_FILE_WATCHER=1
-      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
-      - NUGET_FALLBACK_PACKAGES=
-    volumes:
-      - C:\Users\alife\Desktop\CS420Project\Week9:/app
-      - C:\Users\alife\Desktop\CS420Project:/src
-      - C:\Users\alife\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\alife\.nuget\packages\:/root/.nuget/packages:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-
-    entrypoint: tail -f /dev/null
-    labels:
-      com.microsoft.visualstudio.debuggee.program: "dotnet"
-      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/netcoreapp3.1/Week9.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true

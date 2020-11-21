@@ -1,0 +1,59 @@
+﻿<Properties StartupConfiguration="{8D49BA74-985E-4F10-B432-93BEE01DE234}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RestaurantFrontEnd/Pages/Kitchen/Index.cshtml">
+    <Files>
+      <File FileName="RestaurantFrontEnd/Pages/Kitchen/Index.cshtml" Line="60" Column="47" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Week9" expanded="True">
+            <Node name="Solution Items" expanded="True" />
+            <Node name="Bartender" expanded="True">
+              <Node name="Models" expanded="True">
+                <Node name="ConsumedEvents" expanded="True" />
+                <Node name="PublishedEvents" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="BusBoy" expanded="True">
+              <Node name="Models" expanded="True">
+                <Node name="PublishedEvents" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="docker-compose" expanded="True" />
+            <Node name="Kitchen" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="ConsumedEvents" expanded="True" />
+                <Node name="PublishedEvents" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="RestaurantFrontEnd" expanded="True">
+              <Node name="Pages" expanded="True">
+                <Node name="Bartender" expanded="True" />
+                <Node name="BusBoy" expanded="True" />
+                <Node name="Hosts" expanded="True" />
+                <Node name="Kitchen" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="WaitStaff" expanded="True">
+              <Node name="Models" expanded="True">
+                <Node name="ConsumedEvents" expanded="True" />
+                <Node name="PublishedEvents" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

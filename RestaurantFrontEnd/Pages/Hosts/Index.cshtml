@@ -2,26 +2,65 @@
 @model RestaurantFrontEnd.Pages.Hosts.IndexModel
 @{
 }
+<style>
+    .tableNumberStyle {
+        width: 3rem;
+    }
 
+    h3, form {
+        width: 100%;
+    }
+</style>
 <h1 style="margin-bottom:3rem;">Hosts</h1>
 <div class="row">
     <div class="col-6">
-        <h3>New Reservation</h3>
-        <form id="form">
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
-            </div>
-            <div class="form-group">
-                <label for="guests">Number of Guests</label>
-                <input type="number" class="form-control" id="guests" placeholder="Number of Guests">
-            </div>
-            <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
-                <input type="number" class="form-control" id="phoneNumber">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        <div class="row">
+            <h3>New Reservation</h3>
+            <form id="form">
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" class="form-control" id="guests" placeholder="Number of Guests">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="number" class="form-control" id="phoneNumber">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="row">
+            <h3>Available Tables</h3>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Table Number</th>
+                        <th scope="col">Seats</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="availableTableTableBody">
+                    <tr>
+                        <th scope="row">23</th>
+                        <td>4</td>
+                        <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">24</th>
+                        <td>2</td>
+                        <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">26</th>
+                        <td>8</td>
+                        <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="col-6">
         <h3>Reservations</h3>
@@ -31,38 +70,43 @@
                     <th scope="col">Last Name</th>
                     <th scope="col">Guests</th>
                     <th scope="col">Phone Number</th>
+                    <th scope="col">Table Number</th>
                     <th scope="col">Remove</th>
                 </tr>
             </thead>
-            <tbody id="tableBody">
+            <tbody id="reservationTableBody">
                 <tr>
                     <th scope="row">Otto</th>
                     <td>4</td>
                     <td>304-863-2432</td>
-                    <td onclick="deleteRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    <td><input class="tableNumberStyle" type="number" placeholder="-" /></td>
+                    <td onclick="deleteReservationRow(this)"><button type="button" class="btn btn-danger">X</button></td>
                 </tr>
                 <tr>
                     <th scope="row">Thornton</th>
                     <td>2</td>
                     <td>304-221-4823</td>
-                    <td onclick="deleteRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    <td><input class="tableNumberStyle" type="number" placeholder="-" /></td>
+                    <td onclick="deleteReservationRow(this)"><button type="button" class="btn btn-danger">X</button></td>
                 </tr>
                 <tr>
                     <th scope="row">Bird</th>
                     <td>8</td>
                     <td>814-231-5692</td>
-                    <td onclick="deleteRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    <td><input class="tableNumberStyle" type="number" placeholder="-" /></td>
+                    <td onclick="deleteReservationRow(this)"><button type="button" class="btn btn-danger">X</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
 
+<!-- Common scripts -->
 <script>
     const form = document.getElementById('form');
     form.addEventListener('submit', newReservation);
 
-    function newReservation(event){
+    function newReservation(event) {
         event.preventDefault();
 
         // get the form elements
@@ -78,18 +122,73 @@
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "https://localhost:44447/api/Source/NewReservation", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify({ "guestCount": parseInt(guests), "name": lastName, "phoneNumber": phoneNumber, "timeStamp": new Date().toISOString()}));
+        xhr.send(JSON.stringify({ "guestCount": parseInt(guests), "name": lastName, "phoneNumber": phoneNumber, "timeStamp": new Date().toISOString() }));
     };
 
-    function tableSeated(guests) {
-        // post the table seated event
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://localhost:44447/api/Source/TableSeated", true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify({ "guests": guests, "tableNumber": 0, "timeStamp": new Date().toISOString() }));
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+</script>
+
+<!-- Scripts for Tables -->
+<script>
+    async function getAvailableTables() {
+        let timer = 3;
+        while (true) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://localhost:44447/api/Source/TableReady", true);
+            var jsonResponse
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        var data = xhr.responseText;
+                        jsonResponse = JSON.parse(data);
+
+                        if (jsonResponse !== "False") {
+                            jsonResponse = JSON.parse(jsonResponse);
+
+                            var tableNumber = jsonResponse.TableNumber;
+                            var seats = jsonResponse.SeatCount;
+
+                            var newRowText = `
+                                                <th scope="row">${tableNumber}</th>
+                                                <td>${seats}</td>
+                                                <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                                             `
+
+                            var list = document.getElementById("availableTableTableBody");
+                            var newRow = list.insertRow(list.rows.length);
+                            newRow.innerHTML = newRowText;
+                            if (timer >= .5) {
+                                timer -= .25;
+                            }
+                        } else {
+                            if (timer < 5) {
+                                timer += .25;
+                            }
+                        }
+                    }
+                }
+            };
+
+            xhr.send(null);
+
+            await sleep(timer * 1000);
+        }
     }
 
-    async function getReservations(){
+    function deleteTableRow(x) {
+        var list = document.getElementById("availableTableTableBody");
+        var row = x.parentElement;
+        list.deleteRow(row.rowIndex - 1);
+    }
+
+    getAvailableTables()
+</script>
+
+<!-- Scripts for Reservations -->
+<script>
+    async function getReservations() {
         let timer = 3;
         while (true) {
             var xhr = new XMLHttpRequest();
@@ -112,10 +211,11 @@
                                                 <th scope="row">${name}</th>
                                                 <td>${guests}</td>
                                                 <td>${phone}</td>
-                                                <td onclick="deleteRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                                                <td><input class="tableNumberStyle" type="number" placeholder="-" /></td>
+                                                <td onclick="deleteReservationRow(this)"><button type="button" class="btn btn-danger">X</button></td>
                                              `
 
-                            var list = document.getElementById("tableBody");
+                            var list = document.getElementById("reservationTableBody");
                             var newRow = list.insertRow(list.rows.length);
                             newRow.innerHTML = newRowText;
                             if (timer >= .5) {
@@ -136,19 +236,24 @@
         }
     }
 
-    function deleteRow(x) {
-        var list = document.getElementById("tableBody");
-        var row = x.parentElement;
-        var rowData = row.children;
-        var guests = parseInt(rowData[1].innerText);
-
-        tableSeated(guests);
-
-        list.deleteRow(row.rowIndex - 1);
+    function tableSeated(guests, tableNumber) {
+        // post the table seated event
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://localhost:44447/api/Source/TableSeated", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({ "guests": guests, "tableNumber": tableNumber, "timeStamp": new Date().toISOString() }));
     }
 
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+    function deleteReservationRow(x) {
+        var list = document.getElementById("reservationTableBody");
+        var row = x.parentElement;
+        var rowData = row.children;
+        var tableNumber = parseInt(rowData[3].children[0].value);
+        var guests = parseInt(rowData[1].innerText);
+
+        tableSeated(guests, tableNumber);
+
+        list.deleteRow(row.rowIndex - 1);
     }
 
     getReservations()
