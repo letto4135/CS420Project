@@ -98,17 +98,17 @@
 
                             var orderNumber = jsonResponse.OrderNumber
                             var tableNumber = jsonResponse.TableNumber;
-                            var drinks = jsonResponse.Drink;
+                            var drinks = jsonResponse.Drink[0];
 
                             var newRowText =  `
                                                 <th scope="row">${orderNumber}</th>
                                                 <td>${tableNumber}</td>
                                                 <td>
                                               `
-
                             for (var i = 0; i < drinks.length; i++) {
-                                drinkName = Object.keys(drinks[i])[0];
-                                drinkPrice = Object.values(drinks[i])[0];
+                                drinkName = drinks[i][0];
+                                drinkPrice = drinks[i][1];
+
                                 newRowText += `
                                                     <div>
                                                         <p>${drinkName}</p>
@@ -170,9 +170,9 @@
             drinkName = drinkData[i].children[0].innerText;
             drinkPrice = parseInt(drinkData[i].children[1].innerText);
             drinks.push(
-                {
-                    drinkName: drinkPrice
-                }
+                [
+                    drinkName, drinkPrice
+                ]
             );
         }
 

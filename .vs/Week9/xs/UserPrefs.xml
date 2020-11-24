@@ -1,42 +1,25 @@
 ﻿<Properties StartupConfiguration="{8D49BA74-985E-4F10-B432-93BEE01DE234}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="RestaurantFrontEnd/Pages/WaitStaff/Index.cshtml">
     <Files>
-      <File FileName="RestaurantFrontEnd/Pages/WaitStaff/Index.cshtml" Line="7" Column="33" />
+      <File FileName="RestaurantFrontEnd/Pages/WaitStaff/Index.cshtml" Line="210" Column="76" />
+      <File FileName="RestaurantFrontEnd/Pages/Kitchen/Index.cshtml" Line="111" Column="56" />
+      <File FileName="RestaurantFrontEnd/Pages/Bartender/Index.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Week9" expanded="True">
-            <Node name="Solution Items" expanded="True" />
-            <Node name="Bartender" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="ConsumedEvents" expanded="True" />
-                <Node name="PublishedEvents" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="BusBoy" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="PublishedEvents" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="docker-compose" expanded="True">
-              <Node name="docker-compose.yml" expanded="True" />
-            </Node>
-            <Node name="Kitchen" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="ConsumedEvents" expanded="True" />
-                <Node name="PublishedEvents" expanded="True" />
-              </Node>
-            </Node>
             <Node name="RestaurantFrontEnd" expanded="True">
               <Node name="Pages" expanded="True">
+                <Node name="Bartender" expanded="True" />
+                <Node name="Kitchen" expanded="True" />
                 <Node name="WaitStaff" expanded="True">
                   <Node name="Index.cshtml" selected="True" />
                 </Node>
               </Node>
             </Node>
             <Node name="WaitStaff" expanded="True">
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ConsumedEvents" expanded="True" />
                 <Node name="PublishedEvents" expanded="True" />

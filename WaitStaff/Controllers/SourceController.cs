@@ -34,7 +34,7 @@ namespace WaitStaff.Controllers
         [HttpGet]
         public ActionResult TableSeated()
         {
-            return new JsonResult(_eventBus.ConsumeEvent("tableSeated"));
+            return new JsonResult(_eventBus.ConsumeEvent("seatedTable"));
         }
 
         [HttpGet]

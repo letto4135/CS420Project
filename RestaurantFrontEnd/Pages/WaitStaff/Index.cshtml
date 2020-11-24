@@ -3,86 +3,228 @@
 @{
 }
 <style>
+    .tableNumberStyle {
+        width: 3rem;
+    }
+
+    h3, form {
+        width: 100%;
+    }
 </style>
 <h1 style="margin-bottom:3rem;">Waitstaff</h1>
 <div class="row">
-    <div class="col-12">
-        <h3>Food Orders</h3>
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Order Number</th>
-                    <th scope="col">Table Number</th>
-                    <th scope="col">Food Order</th>
-                    <th scope="col">Remove</th>
-                </tr>
-            </thead>
-            <tbody id="availableFoodOrders">
-                <tr>
-                    <th scope="row">36</th>
-                    <td>23</td>
-                    <td>
-                        <div>
-                            <p>Shrimp Alfredo</p>
-                            <p style="display:none;">18</p>
-                        </div>
-                        <div>
+    <div class="col-5">
+        <!-- Place orders -->
+        <div class="row">
+            <h3>Order Form</h3>
+            <form id="form">
+                <div class="form-group">
+                    <label for="tableNumber">Table Number</label>
+                    <input type="number" class="form-control" id="tableNumber" placeholder="Table Number">
+                </div>
+                <div class="form-group">
+                    <label for="orderType">Drink or Food</label>
+                    <select class="custom-select" id="orderType">
+                        <option value="0" selected>Choose...</option>
+                        <option value="1">Drink</option>
+                        <option value="2">Food</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="order">Order</label>
+                    <div id="order">
+                        <input type="text" class="form-control orderItem" placeholder="Order">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <button id="addButton" onclick="addEmptyItem()" class="btn btn-secondary">Add Order Item</button>
+        </div>
+        <!-- Seated Tables -->
+        <div class="row">
+            <h3>Seated Tables</h3>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Table Number</th>
+                        <th scope="col">Guests</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="availableTableTableBody">
+                    <tr>
+                        <th scope="row">23</th>
+                        <td>4</td>
+                        <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">24</th>
+                        <td>2</td>
+                        <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">26</th>
+                        <td>8</td>
+                        <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-2"></div>
+    <div class="col-5">
+        <!-- Drinks ready -->
+        <div class="row">
+            <h3>Drinks Ready</h3>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Table Number</th>
+                        <th scope="col">Drinks</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="drinkTableBody">
+                    <tr>
+                        <th scope="row">23</th>
+                        <td>
+                            <p>Coke</p>
+                        </td>
+                        <td onclick="deleteDrinkRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">24</th>
+                        <td>
+                            <p>Lemonade</p>
+                        </td>
+                        <td onclick="deleteDrinkRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">26</th>
+                        <td>
+                            <p>Sweet Tea</p>
+                            <p>Lemonade</p>
+                        </td>
+                        <td onclick="deleteDrinkRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Foods ready -->
+        <div class="row">
+            <h3>Food Ready</h3>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Table Number</th>
+                        <th scope="col">Food</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="foodTableBody">
+                    <tr>
+                        <th scope="row">23</th>
+                        <td>
                             <p>Chicken Alfredo</p>
-                            <p style="display:none;">17</p>
-                        </div>
-                    </td>
-                    <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
-                </tr>
-                <tr>
-                    <th scope="row">28</th>
-                    <td>24</td>
-                    <td>
-                        <div>
-                            <p>Asiago Tortelloni Alfredo with Grilled Chicken</p>
-                            <p style="display:none;">19</p>
-                        </div>
-                        <div>
-                            <p>Eggplant Parmigiana</p>
-                            <p style="display:none;">15</p>
-                        </div>
-                        <div>
-                            <p>Five Cheese Ziti al Forno</p>
-                            <p style="display:none;">14</p>
-                        </div>
-                    </td>
-                    <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
-                </tr>
-                <tr>
-                    <th scope="row">32</th>
-                    <td>26</td>
-                    <td>
-                        <div>
-                            <p>Seafood Alfredo</p>
-                            <p style="display:none;">18</p>
-                        </div>
-                        <div>
+                        </td>
+                        <td onclick="deleteFoodRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">24</th>
+                        <td>
                             <p>Steak Alfredo</p>
-                            <p style="display:none;">17</p>
-                        </div>
-                    </td>
-                    <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
-                </tr>
-            </tbody>
-        </table>
+                        </td>
+                        <td onclick="deleteFoodRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">26</th>
+                        <td>
+                            <p>Eggplant Parmigiana</p>
+                            <p>Asiago Tortelloni Alfredo with Grilled Chicken</p>
+                        </td>
+                        <td onclick="deleteFoodRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 </div>
 
 <!-- Common scripts -->
-<script>function sleep(ms) {
+<script>
+    function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
-    }</script>
+    }
 
-<!-- Scripts for Food Orders -->
-<script>async function getAvailableFoodOrders() {
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+</script>
+
+<!-- Order scripts -->
+<script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', newOrder);
+
+    function addEmptyItem() {
+        let order = document.getElementById("order");
+        let newInput = document.createElement("input");
+        newInput.type = "text";
+        newInput.classList.add("form-control");
+        newInput.classList.add("orderItem");
+        newInput.placeholder = "Order";
+        let node = document.createTextNode("");
+        newInput.appendChild(node);
+        order.appendChild(newInput);
+    }
+
+    function newOrder(event) {
+        event.preventDefault();
+
+        // get the form elements
+
+        let tableBox = document.getElementById("tableNumber"); let orderBox = document.getElementsByClassName("orderItem"); let typeOfOrderBox = document.getElementById("orderType");
+
+        // get the values of the form elements
+
+        let tableNumber = tableBox.value; let typeOfOrder = typeOfOrderBox.value; let orderItems = [[]];
+        for (var i = 0; i < orderBox.length; i++) {
+            orderItems[0].push([orderBox[i].value, 0]);
+        }
+
+        // remove values from boxes after getting the values
+
+        tableBox.value = ""; typeOfOrder.value = "";
+        var order = document.getElementById("order");
+        while (order.children.length > 1) {
+            order.removeChild(order.childNodes[0]);
+        }
+        order.children[0].value = "";
+
+        // post the order to Bartender or Kitchen api
+
+        if (typeOfOrder == "1") {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://localhost:44449/api/Source/HaveDrinkOrder", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({ "orderNumber": getRandomInt(@Int16.MaxValue), "tableNumber": parseInt(tableNumber), "drink": orderItems, "timeStamp": new Date().toISOString() }));
+        } else {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://localhost:44449/api/Source/HaveFoodOrder", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({ "orderNumber": getRandomInt(@Int16.MaxValue), "tableNumber": parseInt(tableNumber), "food": orderItems, "timeStamp": new Date().toISOString() }));
+        }
+    };
+</script>
+
+<!-- Scripts for Tables -->
+<script>
+    async function getAvailableTables() {
         let timer = 3;
         while (true) {
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "https://localhost:44448/api/Source/GetFoodOrder", true);
+            xhr.open("GET", "https://localhost:44449/api/Source/TableSeated", true);
             var jsonResponse
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4) {
@@ -93,34 +235,16 @@
                         if (jsonResponse !== "False") {
                             jsonResponse = JSON.parse(jsonResponse);
 
-                            var orderNumber = jsonResponse.OrderNumber
                             var tableNumber = jsonResponse.TableNumber;
-                            var food = jsonResponse.Food;
+                            var guests = jsonResponse.Guests;
 
                             var newRowText = `
-                                                <th scope="row">${orderNumber}</th>
-                                                <td>${tableNumber}</td>
-                                                <td>
-                                             `
-
-                            for (var i = 0; i < food.length; i++) {
-                                foodName = Object.keys(food[i])[0];
-                                foodPrice = Object.values(food[i])[0];
-                                newRowText +=`
-                                                    <div>
-                                                        <p>${foodName}</p>
-                                                        <p style="display:none">${foodPrice}</p>
-                                                    </div>
-                                             `
-                            }
-
-
-                            newRowText +=    `
-                                                </td>
+                                                <th scope="row">${tableNumber}</th>
+                                                <td>${guests}</td>
                                                 <td onclick="deleteTableRow(this)"><button type="button" class="btn btn-danger">X</button></td>
-                                             `;
+                                             `
 
-                            var list = document.getElementById("availableFoodOrders");
+                            var list = document.getElementById("availableTableTableBody");
                             var newRow = list.insertRow(list.rows.length);
                             newRow.innerHTML = newRowText;
                             if (timer >= .5) {
@@ -141,41 +265,155 @@
         }
     }
 
-    function foodReady(orderNumber, tableNumber, food) {
-        // post the table seated event
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://localhost:44448/api/Source/FoodReady", true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify({
-            "orderNumber": orderNumber,
-            "tableNumber": tableNumber,
-            "food": food,
-            "timeStamp": new Date().toISOString()
-        }));
+    function deleteTableRow(x) {
+        var list = document.getElementById("availableTableTableBody");
+        var row = x.parentElement;
+        list.deleteRow(row.rowIndex - 1);
     }
 
-    function deleteTableRow(x) {
-        var list = document.getElementById("availableFoodOrders");
-        var row = x.parentElement;
-        var rowData = row.children;
-        var foodData = rowData[2].children;
-        var orderNumber = parseInt(rowData[0].innerText);
-        var tableNumber = parseInt(rowData[1].innerText);
-        var food = [];
+    getAvailableTables()
+</script>
 
-        for (var i = 0; i < foodData.length; i++) {
-            foodName = foodData[i].children[0].innerText;
-            foodPrice = parseInt(foodData[i].children[1].innerText);
-            food.push(
-                {
-                    foodName: foodPrice
+<!-- Scripts for Drinks -->
+<script>
+    async function getDrinks() {
+        let timer = 3;
+        while (true) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://localhost:44449/api/Source/DrinkReady", true);
+            var jsonResponse
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        var data = xhr.responseText;
+                        jsonResponse = JSON.parse(data);
+
+                        if (jsonResponse !== "False") {
+                            jsonResponse = JSON.parse(jsonResponse);
+
+                            var tableNumber = jsonResponse.TableNumber;
+                            var drink = jsonResponse.Drink;
+
+                            var newRowText = `
+                                                <th scope="row">${tableNumber}</th>
+                                                <td>
+                                             `
+                            for (var i = 0; i < drink.length; i++) {
+                                drinkName = drink[i][0];
+                                drinkPrice = drink[i][1];
+                                newRowText += `
+                                                    <div>
+                                                        <p>${drinkName}</p>
+                                                        <p style="display:none">${drinkPrice}</p>
+                                                    </div>
+                                             `
+                            }
+
+
+                            newRowText += `
+                                                </td>
+                                                <td onclick="deleteDrinkRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                                             `
+
+                            var list = document.getElementById("drinkTableBody");
+                            var newRow = list.insertRow(list.rows.length);
+                            newRow.innerHTML = newRowText;
+                            if (timer >= .5) {
+                                timer -= .25;
+                            }
+                        } else {
+                            if (timer < 5) {
+                                timer += .25;
+                            }
+                        }
+                    }
                 }
-            );
-        }
+            };
 
-        foodReady(orderNumber, tableNumber, food);
+            xhr.send(null);
+
+            await sleep(timer * 1000);
+        }
+    }
+
+    function deleteDrinkRow(x) {
+        var list = document.getElementById("drinkTableBody");
+        var row = x.parentElement;
 
         list.deleteRow(row.rowIndex - 1);
     }
 
-    getAvailableFoodOrders()</script>
+    getDrinks()
+</script>
+
+<!-- Scripts for Foods -->
+<script>
+    async function getFoods() {
+        let timer = 3;
+        while (true) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://localhost:44449/api/Source/FoodReady", true);
+            var jsonResponse
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        var data = xhr.responseText;
+                        jsonResponse = JSON.parse(data);
+
+                        if (jsonResponse !== "False") {
+                            jsonResponse = JSON.parse(jsonResponse);
+
+                            var tableNumber = jsonResponse.TableNumber;
+                            var food = jsonResponse.Food;
+
+                            var newRowText = `
+                                                <th scope="row">${tableNumber}</th>
+                                                <td>
+                                             `
+                            for (var i = 0; i < food.length; i++) {
+                                foodName = food[i][0];
+                                foodPrice = food[i][1];
+                                newRowText +=`
+                                                    <div>
+                                                        <p>${foodName}</p>
+                                                        <p style="display:none">${foodPrice}</p>
+                                                    </div>
+                                             `
+                            }
+
+
+                            newRowText +=    `
+                                                </td>
+                                                <td onclick="deleteFoodRow(this)"><button type="button" class="btn btn-danger">X</button></td>
+                                             `
+
+                            var list = document.getElementById("foodTableBody");
+                            var newRow = list.insertRow(list.rows.length);
+                            newRow.innerHTML = newRowText;
+                            if (timer >= .5) {
+                                timer -= .25;
+                            }
+                        } else {
+                            if (timer < 5) {
+                                timer += .25;
+                            }
+                        }
+                    }
+                }
+            };
+
+            xhr.send(null);
+
+            await sleep(timer * 1000);
+        }
+    }
+
+    function deleteFoodRow(x) {
+        var list = document.getElementById("foodTableBody");
+        var row = x.parentElement;
+
+        list.deleteRow(row.rowIndex - 1);
+    }
+
+    getFoods()
+</script>

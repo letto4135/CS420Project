@@ -98,7 +98,7 @@
 
                             var orderNumber = jsonResponse.OrderNumber
                             var tableNumber = jsonResponse.TableNumber;
-                            var food = jsonResponse.Food;
+                            var food = jsonResponse.Food[0];
 
                             var newRowText = `
                                                 <th scope="row">${orderNumber}</th>
@@ -107,8 +107,8 @@
                                              `
 
                             for (var i = 0; i < food.length; i++) {
-                                foodName = Object.keys(food[i])[0];
-                                foodPrice = Object.values(food[i])[0];
+                                foodName = food[i][0];
+                                foodPrice = food[i][1];
                                 newRowText +=`
                                                     <div>
                                                         <p>${foodName}</p>
@@ -170,9 +170,9 @@
             foodName = foodData[i].children[0].innerText;
             foodPrice = parseInt(foodData[i].children[1].innerText);
             food.push(
-                {
-                    foodName: foodPrice
-                }
+                [
+                    foodName, foodPrice
+                ]
             );
         }
 

@@ -39,7 +39,7 @@ namespace Bartender.Controllers
         {
             drink.TimeStamp = DateTime.Now;
 
-            _eventBus.PublishEvent<DrinkReady>("drinkready", drink);
+            _eventBus.PublishEvent<DrinkReady>("drinkReady", drink);
 
             return new JsonResult(drink);
         }
