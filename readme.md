@@ -1,3 +1,22 @@
+The docker-compose.override.yml only works with Macs because it specifies the location of secrets for the https certs.
+To use on windows remove
+```
+    volumes:
+      - ~/.aspnet/https:/root/.aspnet/https:ro
+      - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+```
+from all of the services in the override file.
+
+The UI is on :44444
+The Bartender is on :44445
+The BusBoy is on :44446
+The Host is on :44447
+The Kitchen is on :44448
+The WaitStaff is on :44449
+
+
+
+
 Class Project
 -----------------------
 Tasks
